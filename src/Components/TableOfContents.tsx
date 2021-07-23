@@ -15,36 +15,23 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 
 	return (
 		<div>
-			{Object.keys(text).map(
-				// Iterating through all the strings of our text json
-				// Depending on type of component we will do different actions
-				(i) => {
-					switch (type) {
-						case EChapterType.Theme:
-							return (
-								EChapterType.Chapter &&
-								i.startsWith(String(chapter).charAt(0)) &&
-								i.length === type && (
-									// We will show a user a department of theme he has selected with different color
-									<P selected={chapter === Number(i)} key={i}>
-										{i} {text[i]}
-									</P>
-								)
-							)
-						case EChapterType.Chapter:
-							return (
-								// We will only show chapters user has checked
-								i.startsWith(String(chapter).charAt(0)) &&
-								i.length === type && (
-									// We will show a user a department of theme he has selected with different color
-									<P selected={chapter === Number(i)} key={i}>
-										{i} {text[i]}
-									</P>
-								)
-							)
-					}
-				}
-			)}
+			{Object.keys(text)
+				.filter((i) => {
+					// If component is used for showing chapters, then we will use another way for rendering
+					// In this case we will show only chapters starting with the same number, as user has defined
+					// For example if user has checked chapter 200 we will display here only chapters starting with 2
+					return type === EChapterType.Chapter ? i.startsWith(String(chapter).charAt(0)) : i
+				})
+				.map((i) => {
+					return (
+						i.length === type && (
+							// We will show a user a department of theme he has selected with different color
+							<P selected={chapter === Number(i)} key={i}>
+								{i} {text[i]}
+							</P>
+						)
+					)
+				})}
 		</div>
 	)
 }
