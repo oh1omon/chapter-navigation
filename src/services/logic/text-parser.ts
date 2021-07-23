@@ -27,15 +27,20 @@ export default class TextParser {
 		// Empty object as a placeholder for the result object
 		const obj: TText = {}
 
-		// Here we splitting text string by the new line, so we get an array of all strings
-		this.text.split('\r\n').forEach((i) => {
-			// If the string starts with number, then we put this string into our result object
-			if (TextParser.startsWithNum(i)) {
-				const [first, ...rest] = i.split(' ')
+		this.text
+			// This big number is the last index of the the text range we need
+			.slice(0, 683162)
+			// Here we splitting text string by the new line, so we get an array of all strings
+			.split('\r\n')
+			.forEach((i) => {
+				// If the string starts with number, then we put this string into our result object
+				if (TextParser.startsWithNum(i)) {
+					const [first, ...rest] = i.split(' ')
 
-				obj[first] = rest.join(' ')
-			}
-		})
+					// Setting a new property on our obj
+					obj[first] = rest.join(' ')
+				}
+			})
 
 		// Returning object
 		return obj
