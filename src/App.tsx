@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { initTextState } from './services/dispatchers/text-dispatcher'
 import { useDispatch, useSelector } from 'react-redux'
 import TableOfContents from './Components/TableOfContents'
+import { EChapterType } from './constants/enums'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -22,7 +23,17 @@ function App(): JSX.Element {
 		setIsLoading(false)
 	}, [text])
 
-	return <>{isLoading ? <p>Loading</p> : <TableOfContents chapter={2} />}</>
+	return (
+		<>
+			{isLoading ? (
+				<p>Loading</p>
+			) : (
+				<>
+					<TableOfContents type={EChapterType.Theme} chapter={2} />
+				</>
+			)}
+		</>
+	)
 }
 
 export default App

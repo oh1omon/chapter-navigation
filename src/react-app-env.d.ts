@@ -16,5 +16,6 @@ interface IRootStore {
 // Components props
 
 interface ITableOfContentsProps {
+	type: EChapterType
 	chapter: number
 }
