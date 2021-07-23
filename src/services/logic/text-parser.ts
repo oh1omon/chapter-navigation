@@ -1,3 +1,7 @@
+/**
+ * This class takes in text string.
+ * It has only one public method that will parse that text into json file
+ */
 export default class TextParser {
 	private readonly text: string
 
@@ -10,7 +14,7 @@ export default class TextParser {
 	 * @param str
 	 * @private
 	 */
-	private startsWithNum(str: string): boolean {
+	private static startsWithNum(str: string): boolean {
 		return !!(str.length > 0 && parseInt(str.charAt(0)))
 	}
 
@@ -26,7 +30,7 @@ export default class TextParser {
 		// Here we splitting text string by the new line, so we get an array of all strings
 		this.text.split('\r\n').forEach((i) => {
 			// If the string starts with number, then we put this string into our result object
-			if (this.startsWithNum(i)) {
+			if (TextParser.startsWithNum(i)) {
 				const [first, ...rest] = i.split(' ')
 
 				obj[first] = rest.join(' ')
