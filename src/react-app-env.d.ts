@@ -12,3 +12,9 @@ interface ITextActions {
 interface IRootStore {
 	text: TText
 }
+
+// Components props
+
+interface ITableOfContentsProps {
+	chapter: number
+}
