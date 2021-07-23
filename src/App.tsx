@@ -29,7 +29,8 @@ function App(): JSX.Element {
 				<p>Loading</p>
 			) : (
 				<>
-					<TableOfContents type={EChapterType.Theme} chapter={2} />
+					<TableOfContents type={EChapterType.Theme} chapter={1} />
+					<TableOfContents type={EChapterType.Chapter} chapter={0} />
 				</>
 			)}
 		</>
