@@ -2,8 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { EChapterType } from '../constants/enums'
+import { Link } from 'react-router-dom'
 
-const P = styled.p<{ selected: boolean }>`
+const SLink = styled(Link)<{ selected: boolean }>`
 	&:hover {
 		color: orange;
 	}
@@ -26,9 +27,9 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 					return (
 						i.length === type && (
 							// We will show a user a department of theme he has selected with different color
-							<P selected={chapter === Number(i)} key={i}>
+							<SLink to={`${i}`} selected={chapter === Number(i)} key={i}>
 								{i} {text[i]}
-							</P>
+							</SLink>
 						)
 					)
 				})}
