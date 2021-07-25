@@ -19,3 +19,7 @@ interface ITableOfContentsProps {
 	type: EChapterType
 	chapter: number
 }
+
+interface IResultProps {
+	rule: string | boolean
+}

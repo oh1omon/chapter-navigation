@@ -5,10 +5,11 @@ import { EChapterType } from '../constants/enums'
 import { Link } from 'react-router-dom'
 
 const SLink = styled(Link)<{ selected: boolean }>`
+	color: ${(props) => (props.selected ? 'blue' : 'black')};
+	text-decoration: none;
 	&:hover {
 		color: orange;
 	}
-	color: ${(props) => (props.selected ? 'blue' : 'black')};
 `
 
 const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element => {

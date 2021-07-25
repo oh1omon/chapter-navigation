@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import TableOfContents from './Components/TableOfContents'
 import { EChapterType } from './constants/enums'
 import { useLocation } from 'react-router-dom'
+import Result from './Components/Result'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -38,6 +39,7 @@ function App(): JSX.Element {
 						type={EChapterType.Chapter}
 						chapter={Number(location.pathname.slice(1)) || 0}
 					/>
+					<Result rule={location.pathname.length > 3 && location.pathname.slice(1)} />
 				</>
 			)}
 		</>
