@@ -37,7 +37,7 @@ function App(): JSX.Element {
 					{/*We are passing the whole url string to the chapter, starting after slash*/}
 					<TableOfContents
 						type={EChapterType.Chapter}
-						chapter={Number(location.pathname.slice(1)) || 0}
+						chapter={Number(location.pathname.slice(1, 4)) || 0}
 					/>
 					<Result rule={location.pathname.length > 3 && location.pathname.slice(1)} />
 				</>
