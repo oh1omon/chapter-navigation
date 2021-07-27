@@ -1,8 +1,9 @@
 import React, { ChangeEvent, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { SLink } from './TableOfContents'
+import { IRootStore, TText } from '../react-app-env'
 
-const Search = () => {
+const Search = (): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
 
 	// Local state for result object

@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, createStore, Store } from 'redux'
 import { textReducer } from './reducers/text-reducers'
 import thunk from 'redux-thunk'
+import { IRootStore } from '../react-app-env'
 
 export const rootReducer = combineReducers({ text: textReducer })
 

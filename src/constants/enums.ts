@@ -1,4 +1,6 @@
-export enum EChapterType {
-	Theme = 2,
-	Chapter = 4,
+export enum EChapterTypes {
+	theme = 'theme',
+	chapter = 'chapter',
+	result = 'result',
+	error = 'error',
 }

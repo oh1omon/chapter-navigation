@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { IResultProps, IRootStore } from '../react-app-env'
 
 const Result = ({ rule }: IResultProps) => {
 	const text = useSelector((store: IRootStore) => store.text)
