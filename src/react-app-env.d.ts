@@ -26,9 +26,9 @@ interface IRule {
 
 interface ITableOfContentsProps {
 	type: EChapterTypes
-	chapter: number | string | boolean
+	rule: IRule
 }
 
-interface IResultProps {
-	rule: string | boolean
+interface IBreadcrumbsProps {
+	rule: IRule
 }

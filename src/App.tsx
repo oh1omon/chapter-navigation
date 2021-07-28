@@ -6,6 +6,7 @@ import { EChapterTypes } from './constants/enums'
 import { useLocation } from 'react-router-dom'
 import Search from './Components/Search'
 import { IRootStore, IRule } from './react-app-env'
+import Breadcrumbs from './Components/Breadcrumbs'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -65,10 +66,8 @@ function App(): JSX.Element {
 				<p>Loading</p>
 			) : (
 				<>
-					{/* Currently those components are shown on the same page, but it is for dev period */}
-					<TableOfContents type={EChapterTypes.theme} chapter={rule.theme} />
-					<TableOfContents type={EChapterTypes.chapter} chapter={rule.chapter} />
-					<TableOfContents type={EChapterTypes.result} chapter={rule.result} />
+					<Breadcrumbs rule={rule} />
+					<TableOfContents type={component} rule={rule} />
 					<Search />
 				</>
 			)}

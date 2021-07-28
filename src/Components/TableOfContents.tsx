@@ -14,7 +14,7 @@ export const SLink = styled(Link)<{ selected: boolean }>`
 	}
 `
 
-const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element => {
+const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
 
 	return (
@@ -28,9 +28,9 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 						case EChapterTypes.theme:
 							return i
 						case EChapterTypes.chapter:
-							return i.startsWith(String(chapter).charAt(0))
+							return i.startsWith(String(rule.chapter).charAt(0))
 						case EChapterTypes.result:
-							return i.startsWith(String(chapter))
+							return i.startsWith(String(rule.result))
 					}
 				})
 				.map((i) => {
@@ -40,7 +40,7 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 							return (
 								i.length === 4 && (
 									// We will show a user a department of theme he has selected with different color
-									<SLink to={`${i}`} selected={chapter === Number(i)} key={i}>
+									<SLink to={`${i}`} selected={rule.chapter === Number(i)} key={i}>
 										{i} {text[i]}
 									</SLink>
 								)
@@ -49,7 +49,7 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 							return (
 								i.length === 2 && (
 									// We will show a user a department of theme he has selected with different color
-									<SLink to={`${i}`} selected={chapter === Number(i)} key={i}>
+									<SLink to={`${i}`} selected={rule.theme === Number(i)} key={i}>
 										{i} {text[i]}
 									</SLink>
 								)
