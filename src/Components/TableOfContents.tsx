@@ -34,7 +34,7 @@ const TableOfContents = ({ type, chapter }: ITableOfContentsProps): JSX.Element 
 					}
 				})
 				.map((i) => {
-					// TODO make comments
+					// Depending on type of this component is used for we will render different things
 					switch (type) {
 						case EChapterTypes.chapter:
 							return (

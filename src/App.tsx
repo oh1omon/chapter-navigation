@@ -55,24 +55,9 @@ function App(): JSX.Element {
 				? EChapterTypes.chapter
 				: rule.theme
 				? EChapterTypes.theme
-				: EChapterTypes.error
+				: EChapterTypes.theme
 		)
-		// console.log(
-		// 	rule.result
-		// 		? EChapterTypes.result
-		// 		: rule.chapter
-		// 		? EChapterTypes.chapter
-		// 		: rule.theme
-		// 		? EChapterTypes.theme
-		// 		: EChapterTypes.error
-		// )
 	}, [rule])
-
-	// TODO delete
-	// useEffect(() => {
-	// 	console.log(rule)
-	// 	console.log(component)
-	// }, [component])
 
 	return (
 		<>
@@ -80,7 +65,7 @@ function App(): JSX.Element {
 				<p>Loading</p>
 			) : (
 				<>
-					{/* TODO make comments*/}
+					{/* Currently those components are shown on the same page, but it is for dev period */}
 					<TableOfContents type={EChapterTypes.theme} chapter={rule.theme} />
 					<TableOfContents type={EChapterTypes.chapter} chapter={rule.chapter} />
 					<TableOfContents type={EChapterTypes.result} chapter={rule.result} />
