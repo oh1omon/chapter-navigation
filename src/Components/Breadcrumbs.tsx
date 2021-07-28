@@ -1,43 +1,54 @@
 import React from 'react'
-import { IBreadcrumbsProps } from '../react-app-env'
+import { IBreadcrumbsProps, IRootStore } from '../react-app-env'
 import { SLink } from './TableOfContents'
+import { useSelector } from 'react-redux'
 
-const Breadcrumbs = ({ rule }: IBreadcrumbsProps): JSX.Element => {
+const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): JSX.Element => {
+	const text = useSelector((store: IRootStore) => store.text)
+
 	return (
 		<p>
 			{/* We will render breadcrumbs, only if anything has been already selected */}
-			{rule.chapter ? (
+			{chapter ? (
 				<>
-					{/* Link to the / */}
-					<SLink to={'/'} selected={false}>
-						{rule.theme}
+					{/* Link to the theme */}
+					<>
+						<SLink to={`/`} selected={false}>
+							S
+						</SLink>
+						&gt;
+					</>
+
+					{/* Link to the theme */}
+					<SLink to={`/${theme}`} selected={false}>
+						{`${theme}.`} {text[theme + '.']}
 					</SLink>
 
 					{/* Link to all chapters of this number */}
-					{rule.chapter > 9 && (
-						<>
-							&gt;
-							<SLink to={`/${rule.theme}`} selected={false}>
-								{`${rule.theme}00`}
-							</SLink>
-						</>
-					)}
+					{/*{chapter > 9 && (*/}
+					{/*	<>*/}
+					{/*		&gt;*/}
+					{/*		<SLink to={`/${theme}00.`} selected={false}>*/}
+					{/*			{`${theme}00.`} {text[theme + '00.']}*/}
+					{/*		</SLink>*/}
+					{/*	</>*/}
+					{/*)}*/}
 
-					{/*Link to all rule of selected chapter */}
-					{rule.chapter > 9 && `${rule.theme}00` !== String(rule.chapter) && (
+					{/*Link to all rules of selected chapter */}
+					{chapter > 9 && `${theme}00` !== String(chapter) && (
 						<>
 							&gt;
-							<SLink to={`/${rule.chapter}`} selected={false}>
-								{rule.chapter}
+							<SLink to={`/${chapter}`} selected={false}>
+								{`${chapter}.`} {text[`${chapter}.`]}
 							</SLink>
 						</>
 					)}
 
 					{/* Showing user result number */}
-					{typeof rule.result === 'string' && rule.result.length > 4 && (
+					{typeof result === 'string' && result.length > 4 && (
 						<>
 							&gt;
-							{rule.result}
+							{result}
 						</>
 					)}
 				</>
