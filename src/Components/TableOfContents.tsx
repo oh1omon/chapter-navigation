@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { IRootStore, ITableOfContentsProps } from '../react-app-env'
 
 export const SLink = styled(Link)<{ selected: boolean }>`
-	color: ${(props) => (props.selected ? 'blue' : 'black')};
+	color: ${(props) => (props.selected ? 'blue' : 'white')};
 	text-decoration: none;
 
 	&:hover {
@@ -14,11 +14,24 @@ export const SLink = styled(Link)<{ selected: boolean }>`
 	}
 `
 
+const SDiv = styled.div`
+	display: flex;
+	flex-flow: column;
+	width: 40vw;
+	height: 40vw;
+	overflow-y: auto;
+	border: 1px solid white;
+	padding: 1em;
+	& > p {
+		padding-bottom: 1em;
+	}
+`
+
 const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
 
 	return (
-		<div>
+		<SDiv>
 			{Object.keys(text)
 				.filter((i) => {
 					// If component is used for showing chapters, then we will use another way for rendering
@@ -62,7 +75,7 @@ const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => 
 							)
 					}
 				})}
-		</div>
+		</SDiv>
 	)
 }
 

@@ -7,6 +7,11 @@ export const GlobalStyles = createGlobalStyle`
 	  outline: 0;
 	  box-sizing: border-box;
 	  font-family: 'Poppins', sans-serif;
+    color:white;
+  }
+  
+  body{
+    background: black;
   }
   
   button {

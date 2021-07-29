@@ -35,7 +35,7 @@ const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): J
 					{/*)}*/}
 
 					{/*Link to all rules of selected chapter */}
-					{chapter > 9 && `${theme}00` !== String(chapter) && (
+					{chapter > 9 && (
 						<>
 							&gt;
 							<SLink to={`/${chapter}`} selected={false}>
