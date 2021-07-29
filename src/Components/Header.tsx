@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Search from './Search'
 
 const SHeader = styled.header`
 	width: 100%;
@@ -11,9 +12,12 @@ const SHeader = styled.header`
 
 const Header = () => {
 	return (
-		<SHeader>
-			<h1>Chapter Navigation</h1>
-		</SHeader>
+		<>
+			<SHeader>
+				<h1>Chapter Navigation</h1>
+			</SHeader>
+			<Search />
+		</>
 	)
 }
 

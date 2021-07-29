@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SDiv = styled.div`
-	width: 100%;
+	width: 80%;
 	text-align: justify;
+	margin-top: auto;
+	margin-bottom: auto;
 `
 
 const About = () => {

@@ -32,3 +32,8 @@ interface ITableOfContentsProps {
 interface IBreadcrumbsProps {
 	rule: IRule
 }
+
+interface IMainProps {
+	component: EChapterTypes
+	rule: IRule
+}

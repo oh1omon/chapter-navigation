@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { initTextState } from './services/dispatchers/text-dispatcher'
 import { useDispatch, useSelector } from 'react-redux'
-import TableOfContents from './Components/TableOfContents'
 import { EChapterTypes } from './constants/enums'
 import { useLocation } from 'react-router-dom'
-import Search from './Components/Search'
 import { IRootStore, IRule } from './react-app-env'
-import Breadcrumbs from './Components/Breadcrumbs'
 import Header from './Components/Header'
-import About from './Components/About'
+import Main from './Components/Main'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -69,10 +66,7 @@ function App(): JSX.Element {
 			) : (
 				<>
 					<Header />
-					<Breadcrumbs rule={rule} />
-					<About />
-					<TableOfContents type={component} rule={rule} />
-					<Search />
+					<Main component={component} rule={rule} />
 				</>
 			)}
 		</>
