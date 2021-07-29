@@ -32,8 +32,8 @@ const Search = (): JSX.Element => {
 			<div>
 				{/*Displaying results as SLinks, so user could fastly navigate to the chapter and result*/}
 				{Object.keys(result).map((i) => (
-					<SLink to={`${i}`} selected={false} key={i}>
-						{i} {text[i]}
+					<SLink to={`${i}`} key={i}>
+						{i} {`${text[i].split(' ').slice(0, 15).join(' ')}...`}
 					</SLink>
 				))}
 			</div>

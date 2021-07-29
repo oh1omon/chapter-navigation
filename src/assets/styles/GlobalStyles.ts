@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   body{
-    background: black;
+    background: grey;
   }
   
   button {

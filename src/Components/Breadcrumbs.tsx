@@ -15,9 +15,7 @@ const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): J
 		<SP>
 			{/* Link to the theme */}
 			<>
-				<SLink to={`/`} selected={false}>
-					Start
-				</SLink>
+				<SLink to={`/`}>Start</SLink>
 				&nbsp; &gt;
 			</>
 
@@ -25,7 +23,7 @@ const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): J
 			{theme !== 0 && (
 				<>
 					&nbsp;
-					<SLink to={`/${theme}`} selected={false}>
+					<SLink to={`/${theme}`}>
 						{`${theme}.`} {text[theme + '.']}
 					</SLink>
 				</>
@@ -45,7 +43,7 @@ const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): J
 			{chapter > 9 && (
 				<>
 					&nbsp; &gt; &nbsp;
-					<SLink to={`/${chapter}`} selected={false}>
+					<SLink to={`/${chapter}`}>
 						{`${chapter}.`} {text[`${chapter}.`]}
 					</SLink>
 				</>

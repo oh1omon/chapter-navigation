@@ -5,8 +5,8 @@ import { EChapterTypes } from '../constants/enums'
 import { Link } from 'react-router-dom'
 import { IRootStore, ITableOfContentsProps } from '../react-app-env'
 
-export const SLink = styled(Link)<{ selected: boolean }>`
-	color: ${(props) => (props.selected ? 'blue' : 'white')};
+export const SLink = styled(Link)`
+	color: white;
 	text-decoration: none;
 
 	&:hover {
@@ -23,6 +23,7 @@ const SDiv = styled.div`
 	overflow-y: auto;
 	border: 1px solid white;
 	padding: 1em;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 	& > p {
 		padding-bottom: 1em;
 	}
@@ -58,7 +59,7 @@ const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => 
 								return (
 									i.length === 4 && (
 										// We will show a user a department of theme he has selected with different color
-										<SLink to={`${i}`} selected={rule.chapter === Number(i)} key={i}>
+										<SLink to={`${i}`} key={i}>
 											{i} {text[i]}
 										</SLink>
 									)
@@ -67,7 +68,7 @@ const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => 
 								return (
 									i.length === 2 && (
 										// We will show a user a department of theme he has selected with different color
-										<SLink to={`${i}`} selected={rule.theme === Number(i)} key={i}>
+										<SLink to={`${i}`} key={i}>
 											{i} {text[i]}
 										</SLink>
 									)
