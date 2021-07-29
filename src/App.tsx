@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom'
 import Search from './Components/Search'
 import { IRootStore, IRule } from './react-app-env'
 import Breadcrumbs from './Components/Breadcrumbs'
+import Header from './Components/Header'
+import About from './Components/About'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -66,7 +68,9 @@ function App(): JSX.Element {
 				<p>Loading</p>
 			) : (
 				<>
+					<Header />
 					<Breadcrumbs rule={rule} />
+					<About />
 					<TableOfContents type={component} rule={rule} />
 					<Search />
 				</>
