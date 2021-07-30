@@ -37,3 +37,7 @@ interface IMainProps {
 	component: EChapterTypes
 	rule: IRule
 }
+
+interface ILeftDivProps {
+	rule: IRule
+}

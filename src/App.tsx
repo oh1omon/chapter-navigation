@@ -5,7 +5,7 @@ import { EChapterTypes } from './constants/enums'
 import { useLocation } from 'react-router-dom'
 import { IRootStore, IRule } from './react-app-env'
 import Header from './Components/Header'
-import Main from './Components/Main'
+import Main from './Components/Main/Main'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
