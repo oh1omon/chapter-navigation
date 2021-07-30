@@ -137,7 +137,7 @@ const SWrapper = styled.div`
 	}
 `
 
-const Loader = () => {
+const Loader = (): JSX.Element => {
 	return (
 		<SContainer>
 			<SWrapper>

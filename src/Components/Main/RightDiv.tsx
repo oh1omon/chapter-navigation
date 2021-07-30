@@ -15,7 +15,7 @@ const SRightDiv = styled.div`
 	}
 `
 
-const RightDiv = ({ component, rule }: IMainProps) => {
+const RightDiv = ({ component, rule }: IMainProps): JSX.Element => {
 	return (
 		// Centering our result window
 		<SRightDiv>

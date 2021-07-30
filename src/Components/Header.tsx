@@ -12,7 +12,7 @@ const SDiv = styled.div`
 	}
 `
 
-const Header = () => {
+const Header = (): JSX.Element => {
 	return (
 		<SDiv>
 			<Logo />

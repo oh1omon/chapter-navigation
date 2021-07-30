@@ -15,7 +15,7 @@ const SLeftDiv = styled.div`
 	}
 `
 
-const LeftDiv = ({ rule }: ILeftDivProps) => {
+const LeftDiv = ({ rule }: ILeftDivProps): JSX.Element => {
 	return (
 		// Layout for Breadcrumbs and About components
 		<SLeftDiv>

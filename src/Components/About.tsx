@@ -8,11 +8,11 @@ const SDiv = styled.div`
 	margin-bottom: auto;
 	@media (max-width: 900px) {
 		width: 100%;
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 `
 
-const About = () => {
+const About = (): JSX.Element => {
 	return (
 		<SDiv>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error nemo quidem vitae. Cupiditate, debitis
