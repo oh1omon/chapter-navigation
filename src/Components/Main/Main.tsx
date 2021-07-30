@@ -6,7 +6,7 @@ import RightDiv from './RightDiv'
 
 const SContainer = styled.div`
 	width: 100%;
-	height: 85vh;
+	min-height: 85vh;
 	display: flex;
 	position: relative;
 	flex-flow: row;

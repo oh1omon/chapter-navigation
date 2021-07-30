@@ -7,12 +7,10 @@ const SHeader = styled.header`
 	padding: 2rem 5rem;
 	& > a > h1 {
 		font-size: 3rem;
-		@media (max-width: 900px) {
-			font-size: 2rem;
-		}
 	}
 	@media (max-width: 900px) {
 		height: 15vh;
+		padding: 1rem 3rem;
 		& > a > h1 {
 			font-size: 1.75rem;
 		}

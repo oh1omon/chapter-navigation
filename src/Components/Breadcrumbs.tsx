@@ -6,6 +6,9 @@ import styled from 'styled-components'
 
 const SP = styled.p`
 	font-size: 1.5em;
+	@media (max-width: 900px) {
+		padding-bottom: 2rem;
+	}
 `
 
 const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): JSX.Element => {
