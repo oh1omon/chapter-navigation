@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { IRootStore, IRule } from './react-app-env'
 import Header from './Components/Header'
 import Main from './Components/Main/Main'
+import Loader from './Components/Loader'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
@@ -62,7 +63,7 @@ function App(): JSX.Element {
 	return (
 		<>
 			{isLoading ? (
-				<p>Loading</p>
+				<Loader />
 			) : (
 				<>
 					<Header />
