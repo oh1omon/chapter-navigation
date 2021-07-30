@@ -5,6 +5,7 @@ import { IRootStore, TText } from '../react-app-env'
 import SearchIcon from '../assets/icons/SearchIcon'
 import styled from 'styled-components'
 
+// Styling for label and its child components
 const SLabel = styled.label`
 	position: relative;
 
@@ -28,10 +29,21 @@ const SLabel = styled.label`
 	}
 `
 
-const SDiv = styled.div`
+// Wrapper for search results
+const SWrapper = styled.div`
 	width: 17em;
+	position: absolute;
+	background-color: #131313;
+	z-index: 2;
 `
 
+// Styles for main container
+const SContainer = styled.div`
+	position: relative;
+	padding: 2rem 5rem;
+`
+
+// Styles for search result cell
 const ResultCellDiv = styled.div`
 	padding-top: 1em;
 	border-bottom: 4px solid white;
@@ -67,13 +79,13 @@ const Search = (): JSX.Element => {
 		)
 	}
 	return (
-		<>
+		<SContainer>
 			<SLabel htmlFor={'search'}>
 				<input id={'search'} type={'text'} placeholder={'Search'} onChange={(e) => searchHandler(e)} />
 				<SearchIcon />
 			</SLabel>
 
-			<SDiv>
+			<SWrapper>
 				{/*Displaying results as SLinks, so user could fastly navigate to the chapter and result*/}
 				{Object.keys(result).map((i) => (
 					<SLink
@@ -88,8 +100,8 @@ const Search = (): JSX.Element => {
 						</ResultCellDiv>
 					</SLink>
 				))}
-			</SDiv>
-		</>
+			</SWrapper>
+		</SContainer>
 	)
 }
 

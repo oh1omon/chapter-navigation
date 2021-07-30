@@ -1,23 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Search from './Search'
+import Logo from './Logo'
 
-const SHeader = styled.header`
-	width: 100%;
-	height: 15vh;
-	& > h1 {
-		font-size: 4rem;
-	}
+const SDiv = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `
 
 const Header = () => {
 	return (
-		<>
-			<SHeader>
-				<h1>Chapter Navigation</h1>
-			</SHeader>
+		<SDiv>
+			<Logo />
 			<Search />
-		</>
+		</SDiv>
 	)
 }
 
