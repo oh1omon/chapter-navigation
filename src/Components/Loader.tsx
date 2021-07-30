@@ -20,7 +20,7 @@ const SWrapper = styled.div`
 		width: 70px;
 		border: 3px solid #262722;
 		border-radius: 3px;
-		background-color: lavender;
+		background-color: orange;
 		position: absolute;
 		top: 0;
 		transition: transform 0.2s ease;
@@ -37,6 +37,7 @@ const SWrapper = styled.div`
 		animation-name: card-1;
 		animation-iteration-count: infinite;
 	}
+
 	& :nth-child(2) {
 		z-index: 2;
 		margin-left: 10px;
@@ -44,6 +45,7 @@ const SWrapper = styled.div`
 		animation-name: card-2;
 		animation-iteration-count: infinite;
 	}
+
 	& :last-child {
 		z-index: 1;
 		animation-duration: 6s;
@@ -56,11 +58,13 @@ const SWrapper = styled.div`
 		}
 		16.66666% {
 			transform: translateX(95px) rotate(15deg);
-		} // slide out
+		}
+		// slide out
 		33.33333% {
 			transform: translateX(-20px);
 			z-index: 1;
-		} // to back
+		}
+		// to back
 		49.99999% {
 			transform: translateX(-20px);
 			z-index: 1;
@@ -68,7 +72,8 @@ const SWrapper = styled.div`
 		66.66666% {
 			transform: translateX(-10px);
 			z-index: 2;
-		} // to middle
+		}
+		// to middle
 		83.33333% {
 			transform: translateX(-10px);
 			z-index: 2;
@@ -84,42 +89,51 @@ const SWrapper = styled.div`
 		33.33333% {
 			transform: translateX(10px);
 			z-index: 3;
-		} // to front
+		}
+		// to front
 		49.99999% {
 			transform: translateX(105px) rotate(15deg);
-		} // slide out
+		}
+		// slide out
 		66.66666% {
 			transform: translateX(-10px);
 			z-index: 1;
-		} //to back
+		}
+		//to back
 		83.33333% {
 			transform: translateX(-10px);
 			z-index: 1;
-		} //stay still
+		}
+		//stay still
 	}
 
 	@keyframes card-3 {
 		0% {
 			z-index: 1;
-		} //to back
+		}
+		//to back
 		16.66666% {
 			transform: translateX(0);
 		}
 		33.33333% {
 			transform: translateX(10px);
 			z-index: 2;
-		} // to middle
+		}
+		// to middle
 		49.99999% {
 			transform: translateX(10px);
 			z-index: 2;
-		} //stay still
+		}
+		//stay still
 		66.66666% {
 			transform: translateX(20px);
 			z-index: 3;
-		} //to front
+		}
+		//to front
 		83.33333% {
 			transform: translateX(115px) rotate(15deg);
-		} //slide out
+		}
+		//slide out
 	}
 `
 

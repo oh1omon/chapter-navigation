@@ -12,14 +12,14 @@ const SLabel = styled.label`
 	& > input {
 		color: white;
 		padding: 0.5em;
-		background-color: black;
+		background-color: transparent;
 		border: 0;
 		border-bottom: 2px solid white;
 		width: 25em;
 	}
 	& > input:focus {
 		background-color: white;
-		color: black;
+		color: #111111;
 	}
 
 	& > svg {
@@ -33,7 +33,7 @@ const SLabel = styled.label`
 const SWrapper = styled.div`
 	width: 17em;
 	position: absolute;
-	background-color: #131313;
+	background-color: #111111;
 	z-index: 2;
 `
 

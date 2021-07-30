@@ -23,6 +23,7 @@ const SDiv = styled.div`
 	overflow-y: auto;
 	border: 1px solid white;
 	padding: 1em;
+	background-color: rgba(29, 28, 28, 0.5);
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 	& > p {
 		padding-bottom: 1em;
