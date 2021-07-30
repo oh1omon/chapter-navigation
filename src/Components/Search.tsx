@@ -33,7 +33,7 @@ const SLabel = styled.label`
 const SWrapper = styled.div`
 	width: 17em;
 	position: absolute;
-	background-color: #111111;
+	background-color: rgba(29, 28, 28, 0.9);
 	z-index: 2;
 `
 
@@ -46,7 +46,7 @@ const SContainer = styled.div`
 // Styles for search result cell
 const ResultCellDiv = styled.div`
 	padding-top: 1em;
-	border-bottom: 4px solid white;
+	border-bottom: 2px solid white;
 	width: 100%;
 	font-size: 14px;
 	text-align: justify;
