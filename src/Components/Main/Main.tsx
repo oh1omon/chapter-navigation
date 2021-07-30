@@ -18,7 +18,7 @@ const SContainer = styled.div`
 	}
 `
 
-const Main = ({ component, rule }: IMainProps) => {
+const Main = ({ component, rule }: IMainProps): JSX.Element => {
 	return (
 		<SContainer>
 			<LeftDiv rule={rule} />

@@ -19,7 +19,7 @@ const SHeader = styled.header`
 	}
 `
 
-const Logo = () => {
+const Logo = (): JSX.Element => {
 	return (
 		<SHeader>
 			<SLink to={'/'}>

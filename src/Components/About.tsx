@@ -12,7 +12,7 @@ const SDiv = styled.div`
 	}
 `
 
-const About = () => {
+const About = (): JSX.Element => {
 	return (
 		<SDiv>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error nemo quidem vitae. Cupiditate, debitis
