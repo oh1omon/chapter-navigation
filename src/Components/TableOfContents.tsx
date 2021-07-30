@@ -31,6 +31,11 @@ const SDiv = styled.div`
 	& :last-child {
 		padding: 0;
 	}
+
+	@media (max-width: 900px) {
+		width: 80vw;
+		height: 80vw;
+	}
 `
 
 const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => {

@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #111111 url(${img}) no-repeat center center/cover;
+    background: #111111 url(${img}) repeat center center/cover;
 
   }
 

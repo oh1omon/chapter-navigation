@@ -11,6 +11,11 @@ const SContainer = styled.div`
 	position: relative;
 	flex-flow: row;
 	justify-content: space-around;
+
+	@media (max-width: 900px) {
+		align-items: center;
+		flex-flow: column-reverse;
+	}
 `
 
 const Main = ({ component, rule }: IMainProps) => {

@@ -9,6 +9,10 @@ const SRightDiv = styled.div`
 	justify-content: center;
 	width: 50%;
 	height: 100%;
+	@media (max-width: 900px) {
+		width: 100%;
+		align-items: center;
+	}
 `
 
 const RightDiv = ({ component, rule }: IMainProps) => {

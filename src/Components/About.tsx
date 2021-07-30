@@ -6,6 +6,10 @@ const SDiv = styled.div`
 	text-align: justify;
 	margin-top: auto;
 	margin-bottom: auto;
+	@media (max-width: 900px) {
+		width: 100%;
+		font-size: 1em;
+	}
 `
 
 const About = () => {

@@ -9,6 +9,10 @@ const SLeftDiv = styled.div`
 	flex-flow: column;
 	padding: 4rem;
 	width: 50%;
+	@media (max-width: 900px) {
+		width: 100%;
+		align-items: center;
+	}
 `
 
 const LeftDiv = ({ rule }: ILeftDivProps) => {
