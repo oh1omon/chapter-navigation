@@ -2,6 +2,8 @@
 
 // Types for Redux
 
+import { EChapterTypes } from './constants/enums'
+
 type TText = Record<string, string>
 
 interface ITextActions {
@@ -13,13 +15,29 @@ interface IRootStore {
 	text: TText
 }
 
+// Rule object interface
+interface IRule {
+	theme: number
+	chapter: number
+	result: string | boolean
+}
+
 // Components props
 
 interface ITableOfContentsProps {
-	type: EChapterType
-	chapter: number
+	type: EChapterTypes
+	rule: IRule
 }
 
-interface IResultProps {
-	rule: string | boolean
+interface IBreadcrumbsProps {
+	rule: IRule
+}
+
+interface IMainProps {
+	component: EChapterTypes
+	rule: IRule
+}
+
+interface ILeftDivProps {
+	rule: IRule
 }

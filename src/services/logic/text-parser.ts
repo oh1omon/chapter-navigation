@@ -2,6 +2,8 @@
  * This class takes in text string.
  * It has only one public method that will parse that text into json file
  */
+import { TText } from '../../react-app-env'
+
 export default class TextParser {
 	private readonly text: string
 

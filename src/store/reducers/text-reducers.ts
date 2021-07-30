@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/text-actions'
+import { ITextActions, TText } from '../../react-app-env'
 
 /**
  *
