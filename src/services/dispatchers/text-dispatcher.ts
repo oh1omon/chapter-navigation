@@ -2,6 +2,8 @@ import axios from 'axios'
 import * as actionTypes from '../../store/actions/text-actions'
 import { Dispatch } from 'redux'
 import TextParser from '../logic/text-parser'
+import { store } from '../../store/store'
+import { SET_ERROR } from '../../store/actions/error-actions'
 
 /**
  * This function is going to fill the store with read-ready text.
@@ -25,8 +27,9 @@ export const initTextState = () => {
 			// Setting it to store
 			dispatch({ type: actionTypes.SET_TEXT, payload: parsedText })
 		} catch (e) {
+			// We will dispatch to the main store that we have error here
+			store.dispatch({ type: SET_ERROR, payload: true })
 			console.log(e)
-			// TODO Error handling
 		}
 	}
 }

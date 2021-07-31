@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { EChapterTypes } from '../constants/enums'
 import { Link } from 'react-router-dom'
-import { IRootStore, ITableOfContentsProps } from '../react-app-env'
+import { IRootStore } from '../react-app-env'
 
 export const SLink = styled(Link)`
 	color: white;
@@ -38,8 +38,10 @@ const SDiv = styled.div`
 	}
 `
 
-const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => {
+const TableOfContents = (): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
+	const rule = useSelector((store: IRootStore) => store.rule)
+	const component = useSelector((store: IRootStore) => store.component)
 
 	return (
 		<>
@@ -49,7 +51,7 @@ const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => 
 						// If component is used for showing chapters, then we will use another way for rendering
 						// In this case we will show only chapters starting with the same number, as user has defined
 						// For example if user has checked chapter 200 we will display here only chapters starting with 2
-						switch (type) {
+						switch (component) {
 							case EChapterTypes.theme:
 								return i
 							case EChapterTypes.chapter:
@@ -59,8 +61,8 @@ const TableOfContents = ({ type, rule }: ITableOfContentsProps): JSX.Element => 
 						}
 					})
 					.map((i) => {
-						// Depending on type of this component is used for we will render different things
-						switch (type) {
+						// Depending on component is used for we will render different things
+						switch (component) {
 							case EChapterTypes.chapter:
 								return (
 									i.length === 4 && (
