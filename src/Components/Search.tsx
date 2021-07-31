@@ -56,7 +56,7 @@ const Search = (): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
 
 	// Local state for result object
-	const [result, setResult] = useState<TText>({})
+	const [result, setResult] = useState({})
 
 	/**
 	 * This handler is run every time user changes input
@@ -68,9 +68,13 @@ const Search = (): JSX.Element => {
 			setResult({})
 			return
 		}
+		// console.log(Object.keys(text).filter((i) => i.includes(e.target.value)))
+
 		setResult(
 			Object.keys(text)
-				.filter((i) => text[i].includes(e.target.value))
+				.filter((i) => {
+					return i.includes(e.target.value) || text[i].includes(e.target.value)
+				})
 				.slice(0, 5)
 				.reduce((acc, curr) => {
 					acc[curr] = text[curr]
