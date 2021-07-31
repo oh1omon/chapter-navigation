@@ -23,9 +23,15 @@ interface ITextActions {
 	payload: TText
 }
 
+interface IComponentActions {
+	type: string
+	payload: EChapterTypes
+}
+
 interface IRootStore {
 	text: TText
 	rule: IRule
+	component: EChapterTypes
 }
 
 // Components props

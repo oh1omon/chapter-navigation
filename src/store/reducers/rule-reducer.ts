@@ -1,5 +1,3 @@
-// import * as actionTypes from '../actions/rule-actions'
-
 import { IRule, IRuleActions } from '../../react-app-env'
 import * as actionTypes from '../actions/rule-actions'
 
@@ -10,7 +8,6 @@ const initialState = {
 	result: false,
 }
 /**
- *
  * @param state
  * @param action
  * @returns IRule updated state, by default returns the same state, as it was passed into reducer
