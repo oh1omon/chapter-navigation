@@ -1,12 +1,7 @@
 /// <reference types="react-scripts" />
-
-// Types for Redux
-
 import { EChapterTypes } from './constants/enums'
 
-type TText = Record<string, string>
-
-// Rule object interface
+// Rule reducer types
 interface IRule {
 	theme: number
 	chapter: number
@@ -18,11 +13,16 @@ interface IRuleActions {
 	payload: IRule
 }
 
+// Text reducer types
 interface ITextActions {
 	type: string
 	payload: TText
 }
 
+type TText = Record<string, string>
+
+// Component reducer types
+// There is not IComponent, just because it basically is EChapterType enum
 interface IComponentActions {
 	type: string
 	payload: EChapterTypes
@@ -32,24 +32,4 @@ interface IRootStore {
 	text: TText
 	rule: IRule
 	component: EChapterTypes
-}
-
-// Components props
-
-interface ITableOfContentsProps {
-	type: EChapterTypes
-	rule: IRule
-}
-
-interface IBreadcrumbsProps {
-	rule: IRule
-}
-
-interface IMainProps {
-	component: EChapterTypes
-	rule: IRule
-}
-
-interface ILeftDivProps {
-	rule: IRule
 }

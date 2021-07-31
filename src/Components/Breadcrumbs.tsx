@@ -1,5 +1,5 @@
 import React from 'react'
-import { IBreadcrumbsProps, IRootStore } from '../react-app-env'
+import { IRootStore } from '../react-app-env'
 import { SLink } from './TableOfContents'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
@@ -11,8 +11,9 @@ const SP = styled.p`
 	}
 `
 
-const Breadcrumbs = ({ rule: { chapter, result, theme } }: IBreadcrumbsProps): JSX.Element => {
+const Breadcrumbs = (): JSX.Element => {
 	const text = useSelector((store: IRootStore) => store.text)
+	const { chapter, result, theme } = useSelector((store: IRootStore) => store.rule)
 
 	return (
 		<SP>

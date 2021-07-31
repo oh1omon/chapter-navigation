@@ -1,5 +1,4 @@
 import React from 'react'
-import { IMainProps } from '../../react-app-env'
 import styled from 'styled-components'
 import LeftDiv from './LeftDiv'
 import RightDiv from './RightDiv'
@@ -18,11 +17,11 @@ const SContainer = styled.div`
 	}
 `
 
-const Main = ({ component, rule }: IMainProps): JSX.Element => {
+const Main = (): JSX.Element => {
 	return (
 		<SContainer>
-			<LeftDiv rule={rule} />
-			<RightDiv component={component} rule={rule} />
+			<LeftDiv />
+			<RightDiv />
 		</SContainer>
 	)
 }
