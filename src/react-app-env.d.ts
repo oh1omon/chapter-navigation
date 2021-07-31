@@ -5,6 +5,7 @@
 import { EChapterTypes } from './constants/enums'
 
 type TText = Record<string, string>
+// type TText = { [key as string]: string }
 
 interface ITextActions {
 	type: string
