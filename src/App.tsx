@@ -13,6 +13,7 @@ function App(): JSX.Element {
 	const dispatch = useDispatch()
 	const location = useLocation()
 
+	// Getting rule from store
 	const rule = useSelector((store: IRootStore) => store.rule)
 
 	// Getting text from store
@@ -36,7 +37,7 @@ function App(): JSX.Element {
 		dispatch(setRule(location.pathname))
 	}, [location.pathname])
 
-	// Depending on rule object that has been set we will define a component, which should be shown
+	// Depending on rule object that has been set we will dispatch a function to define a component, which should be shown
 	useEffect(() => {
 		dispatch(setComponent(rule))
 	}, [rule])
