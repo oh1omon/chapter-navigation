@@ -5,7 +5,18 @@
 import { EChapterTypes } from './constants/enums'
 
 type TText = Record<string, string>
-// type TText = { [key as string]: string }
+
+// Rule object interface
+interface IRule {
+	theme: number
+	chapter: number
+	result: string | boolean
+}
+
+interface IRuleActions {
+	type: string
+	payload: IRule
+}
 
 interface ITextActions {
 	type: string
@@ -14,13 +25,7 @@ interface ITextActions {
 
 interface IRootStore {
 	text: TText
-}
-
-// Rule object interface
-interface IRule {
-	theme: number
-	chapter: number
-	result: string | boolean
+	rule: IRule
 }
 
 // Components props
