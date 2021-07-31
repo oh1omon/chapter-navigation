@@ -1,5 +1,4 @@
 import React from 'react'
-import { ILeftDivProps } from '../../react-app-env'
 import Breadcrumbs from '../Breadcrumbs'
 import About from '../About'
 import styled from 'styled-components'
@@ -15,11 +14,11 @@ const SLeftDiv = styled.div`
 	}
 `
 
-const LeftDiv = ({ rule }: ILeftDivProps): JSX.Element => {
+const LeftDiv = (): JSX.Element => {
 	return (
 		// Layout for Breadcrumbs and About components
 		<SLeftDiv>
-			<Breadcrumbs rule={rule} />
+			<Breadcrumbs />
 			<About />
 		</SLeftDiv>
 	)
