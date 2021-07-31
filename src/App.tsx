@@ -6,12 +6,16 @@ import { IRootStore } from './react-app-env'
 import Header from './Components/Header'
 import Main from './Components/Main/Main'
 import Loader from './Components/Loader'
+import Error from './Components/Error'
 import { setComponent } from './services/dispatchers/component-dispatcher'
 import { setRule } from './services/dispatchers/rule-dispatcher'
 
 function App(): JSX.Element {
 	const dispatch = useDispatch()
 	const location = useLocation()
+
+	// Getting error state from store
+	const error = useSelector((store: IRootStore) => store.error)
 
 	// Getting rule from store
 	const rule = useSelector((store: IRootStore) => store.rule)
@@ -44,7 +48,9 @@ function App(): JSX.Element {
 
 	return (
 		<>
-			{isLoading ? (
+			{error ? (
+				<Error />
+			) : isLoading ? (
 				<Loader />
 			) : (
 				<>
