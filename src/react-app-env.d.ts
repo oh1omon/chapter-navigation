@@ -1,6 +1,14 @@
 /// <reference types="react-scripts" />
 import { EChapterTypes } from './constants/enums'
 
+// Root store interface
+interface IRootStore {
+	text: TText
+	rule: IRule
+	component: EChapterTypes
+	error: boolean
+}
+
 // Rule reducer types
 interface IRule {
 	theme: number
@@ -28,8 +36,9 @@ interface IComponentActions {
 	payload: EChapterTypes
 }
 
-interface IRootStore {
-	text: TText
-	rule: IRule
-	component: EChapterTypes
+// Error reducer types
+
+interface IErrorActions {
+	type: string
+	payload: boolean
 }

@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/component-actions'
-
 import { EChapterTypes } from '../../constants/enums'
 import { IComponentActions } from '../../react-app-env'
 
