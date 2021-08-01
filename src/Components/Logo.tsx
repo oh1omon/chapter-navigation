@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SLink } from './TableOfContents'
+import { SLink } from './SLink'
 
 const SHeader = styled.header`
 	height: 15vh;

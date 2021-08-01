@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { SLink } from './TableOfContents'
 import { IRootStore, TText } from '../react-app-env'
 import SearchIcon from '../assets/icons/SearchIcon'
 import styled from 'styled-components'
+import { SLink } from './SLink'
 
 // Styling for label and its child components
 const SLabel = styled.label`

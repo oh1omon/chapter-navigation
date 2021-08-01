@@ -1,8 +1,8 @@
 import React from 'react'
 import { IRootStore } from '../react-app-env'
-import { SLink } from './TableOfContents'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { SLink } from './SLink'
 
 const SP = styled.p`
 	font-size: 1.5em;
@@ -32,16 +32,6 @@ const Breadcrumbs = (): JSX.Element => {
 					</SLink>
 				</>
 			)}
-
-			{/* Link to all chapters of this number */}
-			{/*{chapter > 9 && (*/}
-			{/*	<>*/}
-			{/*		&gt;*/}
-			{/*		<SLink to={`/${theme}00.`} selected={false}>*/}
-			{/*			{`${theme}00.`} {text[theme + '00.']}*/}
-			{/*		</SLink>*/}
-			{/*	</>*/}
-			{/*)}*/}
 
 			{/*Link to all rules of selected chapter */}
 			{chapter > 9 && (
