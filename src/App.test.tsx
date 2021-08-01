@@ -1,7 +1,7 @@
 import React from 'react'
 import { createMemoryHistory, MemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
-import { render, RenderResult } from '@testing-library/react'
+import { fireEvent, render, RenderResult } from '@testing-library/react'
 import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
@@ -87,5 +87,34 @@ describe('App component should render rules', () => {
 
 		expect(firstItem).toBeInTheDocument()
 		expect(lastItem).toBeInTheDocument()
+	})
+})
+
+describe('Search component should work', () => {
+	it('search input is getting rendered', async () => {
+		const { findByLabelText } = renderApp()
+		const input = await findByLabelText(/search-input/i)
+
+		expect(input).toBeInTheDocument()
+	})
+
+	it('no items should be shown if the input field of search component is empty', () => {
+		const { queryAllByTestId } = renderApp()
+
+		const foundItems = queryAllByTestId('search-result')
+
+		expect(foundItems.length).toEqual(0)
+	})
+
+	it('should render results if there are some chars in search input', async () => {
+		const { findAllByTestId, findByLabelText } = renderApp()
+
+		const input = await findByLabelText(/search-input/i)
+		fireEvent.change(input, { target: { value: '104' } })
+
+		expect(input).toHaveValue('104')
+		const foundItems = await findAllByTestId('search-result')
+
+		expect(foundItems.length).toEqual(5)
 	})
 })
