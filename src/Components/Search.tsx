@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { SLink } from './TableOfContents'
 import { IRootStore, TText } from '../react-app-env'
 import SearchIcon from '../assets/icons/SearchIcon'
 import styled from 'styled-components'
+import { SLink } from './SLink'
 
 // Styling for label and its child components
 const SLabel = styled.label`
@@ -68,7 +68,6 @@ const Search = (): JSX.Element => {
 			setResult({})
 			return
 		}
-		// console.log(Object.keys(text).filter((i) => i.includes(e.target.value)))
 
 		setResult(
 			Object.keys(text)
@@ -85,11 +84,17 @@ const Search = (): JSX.Element => {
 	return (
 		<SContainer>
 			<SLabel htmlFor={'search'}>
-				<input id={'search'} type={'text'} placeholder={'Search'} onChange={(e) => searchHandler(e)} />
+				<input
+					aria-label='search-input'
+					id={'search'}
+					type={'text'}
+					placeholder={'Search'}
+					onChange={(e) => searchHandler(e)}
+				/>
 				<SearchIcon />
 			</SLabel>
 
-			<SWrapper>
+			<SWrapper data-testid='search-results-wrapper'>
 				{/*Displaying results as SLinks, so user could fastly navigate to the chapter and result*/}
 				{Object.keys(result).map((i) => (
 					<SLink
@@ -98,6 +103,7 @@ const Search = (): JSX.Element => {
 						onClick={() => {
 							setResult({})
 						}}
+						data-testid='search-result'
 					>
 						<ResultCellDiv>
 							{i} {`${text[i].split(' ').slice(0, 15).join(' ')}...`}
