@@ -47,3 +47,8 @@ Remember, that your link should end with dash char (/)
 ### VCS
 
 I am using Git Flow for organizing branches and VCS, and Standard Version for making changes to CHANGELOG.md and versions
+
+### TBD
+
+-   References in shown rules as hyperlinks
+-   Dynamically loaded text and possibility to specify this the link to the text in UI
