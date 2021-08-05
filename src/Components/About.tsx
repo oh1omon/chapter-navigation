@@ -12,6 +12,10 @@ const SDiv = styled.div`
 	}
 `
 
+const SmallTextDiv = styled.div`
+	font-size: smaller;
+`
+
 const SLink = styled.a`
 	color: dodgerblue;
 	text-decoration: none;
@@ -37,6 +41,18 @@ const About: FC = () => {
 				. Then the actual magic happens, and this rulebook is being presented to the user in an interactive
 				form. Voila!
 			</p>
+
+			<br />
+			<SmallTextDiv>
+				P.S.&nbsp; Icons made by&nbsp;
+				<SLink href='https://www.flaticon.com/authors/wanicon' title='wanicon'>
+					wanicon
+				</SLink>
+				&nbsp;from&nbsp;
+				<SLink href='https://www.flaticon.com/' title='Flaticon'>
+					www.flaticon.com
+				</SLink>
+			</SmallTextDiv>
 			<br />
 			<h3>
 				<SLink href={'https://github.com/oh1omon/chapter-navigation'}>GitHub</SLink>
