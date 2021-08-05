@@ -13,6 +13,7 @@ const SDiv = styled.div`
 `
 
 const SmallTextDiv = styled.div`
+	text-align: left;
 	font-size: smaller;
 `
 
@@ -33,22 +34,20 @@ const About: FC = () => {
 			<p>
 				This project represents an interactive and hyperlinked rulebook for a card game. As a source, it
 				takes&nbsp;
-				<span>
-					<SLink href={'https://media.wizards.com/2021/downloads/MagicCompRules%2020210419.txt'}>
-						these rules
-					</SLink>
-				</span>
+				<SLink href={'https://media.wizards.com/2021/downloads/MagicCompRules%2020210419.txt'}>
+					these rules
+				</SLink>
 				. Then the actual magic happens, and this rulebook is being presented to the user in an interactive
 				form. Voila!
 			</p>
 
 			<br />
 			<SmallTextDiv>
-				P.S.&nbsp; Icons made by&nbsp;
+				P.S.&nbsp;Icons made by&nbsp;{' '}
 				<SLink href='https://www.flaticon.com/authors/wanicon' title='wanicon'>
 					wanicon
 				</SLink>
-				&nbsp;from&nbsp;
+				&nbsp;from&nbsp;{' '}
 				<SLink href='https://www.flaticon.com/' title='Flaticon'>
 					www.flaticon.com
 				</SLink>
