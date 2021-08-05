@@ -7,8 +7,14 @@ import { TText } from '../../react-app-env'
 export default class TextParser {
 	private readonly text: string
 
-	constructor(text: string) {
+	// Getting ready for a MVP+ feature with optional rule text, we will need to change this variables for another text
+	private readonly startingPoint: number
+	private readonly endingPoint: number
+
+	constructor(text: string, startingPoint = 0, endingPoint = 100_000) {
 		this.text = text
+		this.startingPoint = startingPoint
+		this.endingPoint = endingPoint
 	}
 
 	/**
@@ -30,8 +36,8 @@ export default class TextParser {
 		const obj: TText = {}
 
 		this.text
-			// This big number is the last index of the the text range we need
-			.slice(0, 683162)
+			// We will try to find needed data only in desired segment
+			.slice(this.startingPoint, this.endingPoint)
 			// Here we splitting text string by the new line, so we get an array of all strings
 			.split('\r\n')
 			.forEach((i) => {
