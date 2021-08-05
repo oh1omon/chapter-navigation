@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
 const SContainer = styled.div`
@@ -137,7 +137,7 @@ const SWrapper = styled.div`
 	}
 `
 
-const Loader = (): JSX.Element => {
+const Loader: FC = () => {
 	return (
 		<SContainer>
 			<SWrapper>

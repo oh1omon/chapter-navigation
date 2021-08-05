@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, FC, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { IRootStore, TText } from '../react-app-env'
 import SearchIcon from '../assets/icons/SearchIcon'
@@ -52,7 +52,7 @@ const ResultCellDiv = styled.div`
 	text-align: justify;
 `
 
-const Search = (): JSX.Element => {
+const Search: FC = () => {
 	const text = useSelector((store: IRootStore) => store.text)
 
 	// Local state for result object

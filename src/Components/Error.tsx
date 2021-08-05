@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import coolestErrImg from '../assets/images/404.jpg'
 
@@ -20,7 +20,7 @@ const SContainer = styled.div`
 	}
 `
 
-const Error = (): JSX.Element => {
+const Error: FC = () => {
 	return (
 		<SContainer>
 			<img src={coolestErrImg} alt={'404, the wrong url'} />

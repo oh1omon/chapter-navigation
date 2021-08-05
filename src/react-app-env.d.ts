@@ -42,3 +42,21 @@ interface IErrorActions {
 	type: string
 	payload: boolean
 }
+
+// Parser interface
+
+interface IParser {
+	// Text to be parsed
+	readonly text: string
+
+	// Getting ready for a MVP+ feature with optional rule text, we will need to change this variables for another text
+	readonly startingPoint: number
+	readonly endingPoint: number
+
+	/**
+	 * This method parses text file(string) into the json object.
+	 * As a key it sets the number of the rule.
+	 * As the value the actual rule
+	 */
+	parse(): TText
+}
