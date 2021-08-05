@@ -22,7 +22,9 @@ export const initTextState = () => {
 				.then((r) => r.data)
 
 			// Getting json version of text from TextParser
-			const parsedText = new TextParser(response).parse()
+			// startingPoint === 3849 is predefined due to the performance optimizations, its analog is this.text.indexOf('Credits')
+			// startingPoint === 683162 is predefined due to the performance optimizations, its analog is this.text.lastIndexOf('Glossary')
+			const parsedText = new TextParser(response, 3849, 683162).parse()
 
 			// Setting it to store
 			dispatch({ type: actionTypes.SET_TEXT, payload: parsedText })

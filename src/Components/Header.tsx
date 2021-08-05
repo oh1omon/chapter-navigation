@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import Search from './Search'
 import Logo from './Logo'
@@ -12,7 +12,7 @@ const SDiv = styled.div`
 	}
 `
 
-const Header = (): JSX.Element => {
+const Header: FC = () => {
 	return (
 		<SDiv>
 			<Logo />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import LeftDiv from './LeftDiv'
 import RightDiv from './RightDiv'
@@ -17,7 +17,7 @@ const SContainer = styled.div`
 	}
 `
 
-const Main = (): JSX.Element => {
+const Main: FC = () => {
 	return (
 		<SContainer>
 			<LeftDiv />

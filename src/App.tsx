@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { initTextState } from './services/dispatchers/text-dispatcher'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
@@ -10,7 +10,7 @@ import Error from './Components/Error'
 import { setComponent } from './services/dispatchers/component-dispatcher'
 import { setRule } from './services/dispatchers/rule-dispatcher'
 
-function App(): JSX.Element {
+const App: FC = () => {
 	const dispatch = useDispatch()
 	const location = useLocation()
 

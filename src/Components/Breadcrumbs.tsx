@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { IRootStore } from '../react-app-env'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
@@ -11,7 +11,7 @@ const SP = styled.p`
 	}
 `
 
-const Breadcrumbs = (): JSX.Element => {
+const Breadcrumbs: FC = () => {
 	const text = useSelector((store: IRootStore) => store.text)
 	const { chapter, result, theme } = useSelector((store: IRootStore) => store.rule)
 

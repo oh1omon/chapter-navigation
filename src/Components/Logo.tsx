@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { SLink } from './SLink'
 
@@ -17,7 +17,7 @@ const SHeader = styled.header`
 	}
 `
 
-const Logo = (): JSX.Element => {
+const Logo: FC = () => {
 	return (
 		<SHeader>
 			<SLink to={'/'}>
