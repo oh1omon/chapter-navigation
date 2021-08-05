@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { EChapterTypes } from '../constants/enums'
@@ -29,7 +29,7 @@ const SDiv = styled.div`
 	}
 `
 
-const TableOfContents = (): JSX.Element => {
+const TableOfContents: FC = () => {
 	const text = useSelector((store: IRootStore) => store.text)
 	const rule = useSelector((store: IRootStore) => store.rule)
 	const component = useSelector((store: IRootStore) => store.component)

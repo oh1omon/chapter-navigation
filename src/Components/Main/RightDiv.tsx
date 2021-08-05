@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import TableOfContents from '../TableOfContents'
 import styled from 'styled-components'
 
@@ -14,7 +14,7 @@ const SRightDiv = styled.div`
 	}
 `
 
-const RightDiv = (): JSX.Element => {
+const RightDiv: FC = () => {
 	return (
 		// Centering our result window
 		<SRightDiv>

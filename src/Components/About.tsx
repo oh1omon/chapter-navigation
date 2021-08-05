@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
 const SDiv = styled.div`
@@ -21,7 +21,7 @@ const SLink = styled.a`
 	}
 `
 
-const About = (): JSX.Element => {
+const About: FC = () => {
 	return (
 		<SDiv>
 			<h3>Hello there! To be short, I would like to describe the project in two words.</h3>

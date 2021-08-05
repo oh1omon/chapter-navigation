@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Breadcrumbs from '../Breadcrumbs'
 import About from '../About'
 import styled from 'styled-components'
@@ -14,7 +14,7 @@ const SLeftDiv = styled.div`
 	}
 `
 
-const LeftDiv = (): JSX.Element => {
+const LeftDiv: FC = () => {
 	return (
 		// Layout for Breadcrumbs and About components
 		<SLeftDiv>
