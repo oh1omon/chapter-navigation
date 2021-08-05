@@ -2,14 +2,14 @@
  * This class takes in text string.
  * It has only one public method that will parse that text into json file
  */
-import { TText } from '../../react-app-env'
+import { IParser, TText } from '../../react-app-env'
 
-export default class TextParser {
-	private readonly text: string
+export default class TextParser implements IParser {
+	readonly text: string
 
 	// Getting ready for a MVP+ feature with optional rule text, we will need to change this variables for another text
-	private readonly startingPoint: number
-	private readonly endingPoint: number
+	readonly startingPoint: number
+	readonly endingPoint: number
 
 	constructor(text: string, startingPoint = 0, endingPoint = 100_000) {
 		this.text = text
@@ -31,7 +31,7 @@ export default class TextParser {
 	 * As a key it sets the number of the rule.
 	 * As the value the actual rule
 	 */
-	public parse(): TText {
+	parse(): TText {
 		// Empty object as a placeholder for the result object
 		const obj: TText = {}
 
